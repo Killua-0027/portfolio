@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Killua - Frontend Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'gradient': 'gradient 12s ease infinite',
+                        'float': 'float 8s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'draw': 'draw 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' }
+                        },
+                        draw: {
+                            '0%': { strokeDashoffset: '1000' },
+                            '100%': { strokeDashoffset: '0' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .code-block {
+            font-family: 'Courier New', monospace;
+            background: rgba(0, 0, 0, 0.5);
+            border-left: 3px solid #667eea;
+        }
+        
+        .svg-path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+        }
+        
+        .svg-animate {
+            animation: draw 3s ease-in-out forwards;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-gray-100">
+    <div class="min-h-screen flex items-center justify-center p-8">
+        <div class="max-w-5xl w-full">
+            <div class="absolute inset-0 pointer-events-none">
+                <svg class="w-full h-full" viewBox="0 0 1200 800">
+                    <path class="svg-path svg-animate" d="M50,400 Q300,200 600,400 T1150,400" 
+                          stroke="rgba(102, 126, 234, 0.1)" stroke-width="2" fill="none"/>
+                    <path class="svg-path svg-animate" d="M50,300 Q300,100 600,300 T1150,300" 
+                          stroke="rgba(118, 75, 162, 0.1)" stroke-width="2" fill="none" style="animation-delay: 0.5s"/>
+                    <path class="svg-path svg-animate" d="M50,500 Q300,300 600,500 T1150,500" 
+                          stroke="rgba(102, 126, 234, 0.1)" stroke-width="2" fill="none" style="animation-delay: 1s"/>
+                </svg>
+            </div>
+            
+            <div class="relative bg-black/40 backdrop-blur-md rounded-2xl p-8 border border-gray-800 shadow-2xl">
+                <div class="text-center mb-10">
+                    <div class="inline-block mb-6">
+                        <img src="images.jpeg" alt="Profile" class="w-32 h-32 mx-auto rounded-full border-4 border-gray-700 shadow-lg object-cover">
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-3 gradient-text">
+                        Killua
+                    </h1>
+                    <p class="text-lg text-gray-400 mb-4 font-mono">
+                        &lt;Frontend Developer/&gt;
+                    </p>
+                    <p class="text-sm text-gray-500 mb-6 max-w-md mx-auto leading-relaxed">
+                        Ben Mehmet, 18 yaşındayım. 6 yaşından beri yazılım ile uğraşıyorum ve şu an Frontend Developer olarak çalışıyorum. 
+                        Lise son sınıf (12. Sınıf) öğrencisiyim.
+                    </p>
+                    
+                    <div class="flex justify-center space-x-4 mb-8">
+                        <a href="https://github.com/Killua-0027/" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors border border-gray-700">
+                            <i class="fab fa-github text-gray-400"></i>
+                        </a>
+                        <a href="https://discord.com/users/1409061129228914718" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors border border-gray-700">
+                            <i class="fab fa-discord text-gray-400"></i>
+                        </a>
+                        <a href="https://www.instagram.com/knox_0027/" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors border border-gray-700">
+                            <i class="fab fa-instagram text-gray-400"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mb-10">
+                    <div class="code-block rounded-lg p-4 text-sm">
+                        <div class="text-gray-300">
+                            <span class="text-purple-400">const</span> <span class="text-blue-400">developer</span> = {<br/>
+                            &nbsp;&nbsp;<span class="text-green-400">name</span>: <span class="text-yellow-300">"Killua"</span>,<br/>
+                            &nbsp;&nbsp;<span class="text-green-400">role</span>: <span class="text-yellow-300">"Frontend Developer"</span>,<br/>
+                             &nbsp;&nbsp;<span class="text-green-400">years</span>: <span class="text-yellow-300">"18"</span>,<br/>
+                            &nbsp;&nbsp;<span class="text-green-400">skills</span>: [<span class="text-yellow-300">"Html"</span>, <span class="text-yellow-300">"CSS"</span>, <span class="text-yellow-300">"Javascript"</span>]<br/>
+                            };
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Grid -->
+                <div class="mb-10">
+                    <h2 class="text-xl font-bold mb-6 text-center text-gray-300">Çalıştığım Diller</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-3xl mx-auto">
+                        <div class="text-center">
+                            <div class="text-2xl mb-2 text-orange-400">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <div class="text-sm font-semibold text-gray-300">HTML</div>
+                            <div class="text-xs text-gray-500">80%</div>
+                            <div class="w-full bg-gray-700 rounded-full h-1 mt-1">
+                                <div class="bg-orange-400 h-1 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl mb-2 text-blue-400">
+                                <i class="fab fa-css3-alt"></i>
+                            </div>
+                            <div class="text-sm font-semibold text-gray-300">CSS</div>
+                            <div class="text-xs text-gray-500">80%</div>
+                            <div class="w-full bg-gray-700 rounded-full h-1 mt-1">
+                                <div class="bg-blue-400 h-1 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl mb-2 text-yellow-400">
+                                <i class="fab fa-js"></i>
+                            </div>
+                            <div class="text-sm font-semibold text-gray-300">JavaScript</div>
+                            <div class="text-xs text-gray-500">40%</div>
+                            <div class="w-full bg-gray-700 rounded-full h-1 mt-1">
+                                <div class="bg-yellow-400 h-1 rounded-full" style="width: 40%"></div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl mb-2 text-purple-400">
+                                <i class="fas fa-hashtag"></i>
+                            </div>
+                            <div class="text-sm font-semibold text-gray-300">C#</div>
+                            <div class="text-xs text-gray-500">40%</div>
+                            <div class="w-full bg-gray-700 rounded-full h-1 mt-1">
+                                <div class="bg-purple-400 h-1 rounded-full" style="width: 40%"></div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl mb-2 text-green-400">
+                                <i class="fab fa-node-js"></i>
+                            </div>
+                            <div class="text-sm font-semibold text-gray-300">Node.js</div>
+                            <div class="text-xs text-gray-500">50%</div>
+                            <div class="w-full bg-gray-700 rounded-full h-1 mt-1">
+                                <div class="bg-green-400 h-1 rounded-full" style="width: 50%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-10">
+                    <h2 class="text-xl font-bold mb-6 text-center text-gray-300">Projelerim</h2>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-gray-800/30 rounded-lg p-4 border border-gray-700 hover:border-gray-600 transition-colors">
+                            <h3 class="font-bold mb-2 text-gray-300 text-sm">AlviBOT</h3>
+                            <p class="text-xs text-gray-500 mb-3">Discord Bot Website</p>
+                            <div class="flex space-x-2">
+                                <a href="https://github.com/Killua-0027/alvibot/" class="text-gray-400 hover:text-gray-300 text-xs">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/Killua-0027/alvibot/" class="text-gray-400 hover:text-gray-300 text-xs">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bg-gray-800/30 rounded-lg p-4 border border-gray-700 hover:border-gray-600 transition-colors">
+                            <h3 class="font-bold mb-2 text-gray-300 text-sm">Portfolio Site</h3>
+                            <p class="text-xs text-gray-500 mb-3">HTML, CSS, JS</p>
+                            <div class="flex space-x-2">
+                                <a href="https://github.com/Killua-0027/portfolio" class="text-gray-400 hover:text-gray-300 text-xs">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/Killua-0027/portfolio" class="text-gray-400 hover:text-gray-300 text-xs">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+
+        const codeText = document.querySelector('.code-block .text-gray-300');
+        if (codeText) {
+            codeText.style.opacity = '0';
+            setTimeout(() => {
+                codeText.style.transition = 'opacity 1s ease-in';
+                codeText.style.opacity = '1';
+            }, 500);
+        }
+    </script>
+</body>
+</html>
